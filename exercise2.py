@@ -19,10 +19,9 @@ width == 20       # comparison operators ==, >, <, !=, <=, >=
 width != 50
 width >= 50
 not width < 10    # logical operator: not, and, or
-
-width > 10 and height == 10
-(width > 10) and (height == 10)
-(width > 10) or (height == 10)
+width > 10 and height == 10      # two conditions
+(width > 10) and (height == 10)  # same as above
+(width > 10) or (height == 10)   # alternative conditions
 
 
 # 1.2 Strings
@@ -34,7 +33,7 @@ width > 10 and height == 10
 
 
 '\'Yes,\' he replied.'          # display the texts in the console
-print('\'Yes,\' he replied.')   # print() produces a more readable output by omitting the enclosing quotes
+print('\'Yes,\' he replied.')   # print() produces a readable output by omitting the enclosing quotes
 
 sentence = 'First line.\nSecond line.'   # a sentence with multiple lines: special character \n means a new line
 sentence                                 # without print(), \n is included in the output
@@ -50,7 +49,7 @@ The third line:
 """)              # print multiple lines using triple-quotes.
 
 # Strings can be indexed, sliced, concatenated.
-len(sentence)  # check the length of a string created above
+len(sentence)  # check the length of a string
 sentence[0]    # index the first position of the string: python index starts from 0
 sentence[5]    # the character in the sixth position
 sentence[-1]   # last character, use - to count backward
@@ -60,9 +59,9 @@ sentence[:3]   # same as above
 sentence[3:]   # all characters starting from the 4th
 sentence[-3:]  # the last three characters
 
-#string[-1] = 'H'       # strings cannot be muted, so ERROR here if remove # sign (check error message in python console)
-'1st' + sentence[5:]    # replace first 5 characters by concatenating two strings.
-'The 2nd ' + sentence[-5:-1] + 'only.'   # More complicated concatenation
+#sentence[-1] = 'H'       # strings cannot be muted, ERROR here if remove pound sign (check error message in python console)
+'1st' + sentence[5:]      # replace first 5 characters by concatenating two strings.
+'The 2nd ' + sentence[-5:-1] + ' only.'   # More complicated concatenation
 sentence[:6] * 3 + "here"                # repeat strings with *, concatenate strings with +
 
 
@@ -83,7 +82,7 @@ lst[0] = 'one'               # unlike strings, lists are mutable.
 lst[1:3] = ['two', 'three']  # replace 2nd and 3rd elements together
 lst
 
-lst.append('six')            # append new item at the end, original list will be affected
+lst.append('six')            # append new item at the end, original list is changed
 lst
 
 lst[:3] = []   # remove the first three items
@@ -94,10 +93,19 @@ lst
 
 
 # 2. Flow Control
-lst = [1, 2, 3, 4, 5, 6, 7,8,9,10]
-for i in lst:
-    print(i)     # the body is indented (hit the tab key)
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+# for loop
+for i in lst:
+    print(i)     # the body is indented (press the tab key)
+
+# if-else statement
+if 21 in lst:
+    print("We find it!")
+else:
+    print("We cannot find it!")
+
+# combine for loop and if-else statement
 for i in lst:
     if i <= 4:             # if condition, indented
         print("bottom")    # indented again
@@ -106,6 +114,7 @@ for i in lst:
     else:
         print("high")
 
+# combine for loop and while loop
 for i in lst:
     while i <= 4:
         print(i, "is in the bottom.")
@@ -146,7 +155,7 @@ def compare(a, b):
         return str(a) + " is equal to " + str(b) + '.'
 
 
-greet('Bob')      # use the function you just defined above
+greet('Bob')      # use the function defined above
 compare(2.0,2)
 
 
