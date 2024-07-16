@@ -31,16 +31,8 @@ width > 10 and height == 10      # two conditions
 "doesn't"               # double quote outside, single quote inside (or reverse)
 'dones\'t'              # if same quote used, use \ to escape the same quote mark inside
 
-
-'\'Yes,\' he replied.'          # display the texts in the console
-print('\'Yes,\' he replied.')   # print() produces a readable output by omitting the enclosing quotes
-
 sentence = 'First line.\nSecond line.'   # a sentence with multiple lines: special character \n means a new line
-sentence                                 # without print(), \n is included in the output
-print(sentence)                          # while print() gives a more readable output
-
-print('C:\n1\n2')   # \n is recognized as a special character by print()
-print(r'C:\n1\n2')  # add r before first quote to avoid \n to be interpreted as a special character
+print(sentence)                          # print() gives a more readable output
 
 print("""         
 The first line:
@@ -54,8 +46,7 @@ sentence[0]    # index the first position of the string: python index starts fro
 sentence[5]    # the character in the sixth position
 sentence[-1]   # last character, use - to count backward
 sentence[-2]   # second-last character
-sentence[0:3]  # first three character: position 0,1,2 only
-sentence[:3]   # same as above
+sentence[:3]   # first three character: index 0,1,2 only, same as sentence[0:3]
 sentence[3:]   # all characters starting from the 4th
 sentence[-3:]  # the last three characters
 
@@ -67,7 +58,6 @@ sentence[:6] * 3 + "here"                # repeat strings with *, concatenate st
 
 # 1.3 Lists
 lst = [1, 2, 3, 4, 5]
-lst
 
 1 in lst        # membership operator: in, not in
 1 not in lst
@@ -76,49 +66,36 @@ lst[0]          # list can be indexed as well
 lst[3:]         # select all elements starting from the 4th.
 
 lst + [88, 99, 100]          # concatenate two lists, original list NOT affected
-lst + ['apple', 'peach']     # concatenate two lists with different data types
+lst + ['apple', 'peach']     # concatenate two lists with different data types, check the result?
 
 lst[0] = 'one'               # unlike strings, lists are mutable.
 lst[1:3] = ['two', 'three']  # replace 2nd and 3rd elements together
-lst
 
 lst.append('six')            # append new item at the end, original list is changed
-lst
-
-lst[:3] = []   # remove the first three items
-lst
-lst[:] = []    # remove all
-lst
 
 
 
 # 2. Flow Control
 lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# for loop
+# for-loop
 for i in lst:
-    print(i)     # the body is indented (press the tab key)
+    print(i + 10)     # the body is indented (press the tab key)
 
 # if-else statement
-if 21 in lst:
+if 2 in lst:
     print("We find it!")
 else:
     print("We cannot find it!")
 
-# combine for loop and if-else statement
+# combine for-loop and if-else statement
 for i in lst:
-    if i <= 4:             # if condition, indented
-        print("bottom")    # indented again
+    if i <= 4:                           # if condition, indented
+        print(i, "is in the bottom.")    # indented again
     elif (i > 4) and (i <= 7):
-        print('middle')
+        print(i, 'is in the middle.')
     else:
-        print("high")
-
-# combine for loop and while loop
-for i in lst:
-    while i <= 4:
-        print(i, "is in the bottom.")
-        i = i + 1          # update i everytime after print() to break the while loop.
+        print(i, "is in the top.")
 
 
 
@@ -128,7 +105,7 @@ round(13.555, 2)
 abs(-7.25)
 min(5,13,11)
 max(5,13,11)
-pow(4,3)   # same as 4**3
+pow(4,3)       # same as 4**3
 
 ## 3.2 Define a function by yourself
 def greet(name):
@@ -155,12 +132,12 @@ def compare(a, b):
         return str(a) + " is equal to " + str(b) + '.'
 
 
-greet('Bob')      # use the function defined above
-compare(2.0,2)
+greet('Elijah')           # use the function defined above
+compare(2.0, 2)
 
 
 ##  3.3 Modular Programming
-# Save the above two functions in a separate python script (that is a module) and name it as my_module.py
+# Save the above two functions in a separate python script (that is a module) and name the file as my_module.py
 # Import the module and use its functions in a new script (or in Python console) with below codes
 import my_module
 help(my_module)
