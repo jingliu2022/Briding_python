@@ -1,4 +1,2 @@
 altair==4.2.0
-matplotlib==3.7.2
 beautifulsoup4==4.11.1
-Pillow==9.2.0
