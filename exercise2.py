@@ -70,7 +70,6 @@ lst + ['apple', 'peach']     # concatenate two lists with different data types, 
 
 lst[0] = 'one'               # unlike strings, lists are mutable.
 lst[1:3] = ['two', 'three']  # replace 2nd and 3rd elements together
-
 lst.append('six')            # append new item at the end, original list is changed
 
 
